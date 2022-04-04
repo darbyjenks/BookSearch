@@ -1,5 +1,3 @@
-// see SignupForm.js for comments
-
 import React, { useState, useEffect } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 
@@ -47,8 +45,7 @@ const LoginForm = () => {
     } catch (e) {
       console.error(e);
     }
-
-    // clear form values
+    //clear form
     setUserFormData({
       email: '',
       password: '',
@@ -57,7 +54,9 @@ const LoginForm = () => {
 
   return (
     <>
-      <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+      <Form 
+      noValidate validated={validated} 
+      onSubmit={handleFormSubmit}>
         <Alert
           dismissible
           onClose={() => setShowAlert(false)}
@@ -67,7 +66,9 @@ const LoginForm = () => {
           Something went wrong with your login credentials!
         </Alert>
         <Form.Group>
-          <Form.Label htmlFor="email">Email</Form.Label>
+          <Form.Label htmlFor="email">
+            Email
+          </Form.Label>
           <Form.Control
             type="text"
             placeholder="Your email"
@@ -82,7 +83,9 @@ const LoginForm = () => {
         </Form.Group>
 
         <Form.Group>
-          <Form.Label htmlFor="password">Password</Form.Label>
+          <Form.Label htmlFor="password">
+            Password
+          </Form.Label>
           <Form.Control
             type="password"
             placeholder="Your password"

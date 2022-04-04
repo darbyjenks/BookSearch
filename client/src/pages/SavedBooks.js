@@ -20,7 +20,6 @@ const SavedBooks = () => {
 
   const userData = data?.me || {};
 
-  // create function that accepts the book's mongo _id value as param and deletes the book from the database
   const handleDeleteBook = async (bookId) => {
     // get token
     const token = Auth.loggedIn() ? Auth.getToken() : null;
@@ -34,7 +33,7 @@ const SavedBooks = () => {
         variables: { bookId },
       });
 
-      // upon success, remove book's id from localStorage
+      // remove bookid
       removeBookId(bookId);
     } catch (err) {
       console.error(err);
@@ -79,7 +78,7 @@ const SavedBooks = () => {
                     className="btn-block btn-danger"
                     onClick={() => handleDeleteBook(book.bookId)}
                   >
-                    Delete this Book!
+                    Delete Book
                   </Button>
                 </Card.Body>
               </Card>
